@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_inherited_preference_wizard_form">
+            <field name="name">user form: customize the Preference form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form_simple_modif" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[2]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <group name="auth" string="Password Management">
+                        <div>
+                            <button name="preference_change_password" type="object" string="Change password" class="btn btn-secondary" />
+                        </div>
+                    </group>
+                </xpath>
+                <!--  Hide `timezone` and `language` in Preference wizard-->
+                <!-- <xpath expr="//field[@name='tz']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//group[@name='preferences']/group[2]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath> -->
+                <!-- end -->
+            </field>
+        </record>
+    </data>
+</odoo>
