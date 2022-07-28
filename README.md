@@ -1,0 +1,2 @@
+# customized_user_preference_wizard_odoo14_15
+odoo tool addon
